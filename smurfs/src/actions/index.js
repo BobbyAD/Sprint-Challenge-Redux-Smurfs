@@ -60,7 +60,7 @@ export const addSmurf = newSmurf => dispatch => {
 export const updateSmurf = (updatedSmurf, id) => dispatch => {
     dispatch({ type: UPDATE_SMURF_START });
     axios
-        .put(`/smurfs/${id}`, updatedSmurf)
+        .put(`http://localhost:3333/smurfs/${id}`, updatedSmurf)
         .then(res => {
             dispatch({type: UPDATE_SMURF_SUCCESS, payload: res.data})
         })
@@ -72,7 +72,7 @@ export const updateSmurf = (updatedSmurf, id) => dispatch => {
             })
         })
 }
-export const deleteSmurfs = deleteMe => dispatch => {
+export const deleteSmurf = deleteMe => dispatch => {
     dispatch({ type: DELETE_SMURF_START});
     axios
         .delete(`http://localhost:3333/smurfs/${deleteMe}`)
